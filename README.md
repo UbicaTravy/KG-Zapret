@@ -1,6 +1,7 @@
+<div align="center">
+
 # KG-Zapret
 
-<div align="center">
 <img src="images/icon.png" width="500" alt="KGOS_logo"/>
 
 # Копия Zapret GUI на C# без premium/donate функционала и пошустрее
@@ -26,6 +27,10 @@
 
 Требуется .NET 8.0 и мозг (если нету в наличии - ничего страшного, подумайте. Если не получилось - подумайте ещё, и так далее по хронологии)
 
+## Как собрать или "Памагите я тупой"
+
+[Тыкай сюды](https://github.com/UbicaTravy/KG-Zapret/blob/main/OTHER/HOW_TO_BUILD.md)
+
 ## TODO
 
 - реализовать работу с winws.exe
@@ -39,4 +44,5 @@
 ## Авторы
 
 - Программист - KillerGrass <- кшк мальчик
+
 - Художник (рисовал аву для проги) - Toter Schädel
