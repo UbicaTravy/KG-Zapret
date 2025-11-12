@@ -67,41 +67,47 @@
         </Grid.RowDefinitions>
 
         <!-- Header with Image and Text -->
-        <Grid Grid.Row="0" Margin="0,0,0,10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+<Grid Grid.Row="0" Margin="0,0,0,10">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
 
-            <!-- Image -->
-            <Image Grid.Column="0" 
-                x:Name="mainImage" 
-                Source="images/icon.png" 
-                Width="120" 
-                Height="120"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="0,0,15,0"/>
+    <!-- Image -->
+    <Image Grid.Column="0" 
+           x:Name="mainImage" 
+           Source="images/icon.png" 
+           Width="100" 
+           Height="100"
+           HorizontalAlignment="Left"
+           VerticalAlignment="Top"
+           Margin="0,0,15,0"/>
 
-            <!-- Text Content -->
-            <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                <!-- Main Title -->
-                <TextBlock Text="KG-Zapret GUI" 
-                        FontSize="20" 
-                        FontWeight="Bold" 
-                        Margin="0,0,0,5"/>
-                
-                <!-- Description -->
-                <TextBlock Text="KG-Zapret GUI - ПО для ускорения интернета. Она полностью бесплатна и OpenSource. Данный проект копия проекта Zapret GUI (https://github.com/youtubediscord/zapret)"
-                        FontSize="11"
-                        TextWrapping="Wrap"
-                        Foreground="#666666"
-                        MaxWidth="300"/>
-            </StackPanel>
-        </Grid>
+        <!-- Text Content -->
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <!-- Main Title -->
+            <TextBlock Text="KG-Zapret GUI" 
+                    FontSize="20" 
+                    FontWeight="Bold" 
+                    Margin="0,0,0,5"/>
+            
+            <!-- Description -->
+            <TextBlock FontSize="11"
+                    TextWrapping="Wrap"
+                    Foreground="#666666"
+                    MaxWidth="300">
+                <Run Text="KG-Zapret GUI - ПО для ускорения интернета. Полностью бесплатна и OpenSource. Основана на проекте "/>
+                <Hyperlink NavigateUri="https://github.com/youtubediscord/zapret"
+                        RequestNavigate="Hyperlink_RequestNavigate">
+                    Zapret GUI
+                </Hyperlink>
+                <Run Text="."/>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
 
-        <!-- Separator -->
-        <Separator Grid.Row="1" Margin="0,0,0,10"/>
+    <!-- Separator -->
+<Separator Grid.Row="1" Margin="0,0,0,10"/>
 
         <!-- Status -->
         <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,0,0,10" HorizontalAlignment="Center">
