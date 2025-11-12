@@ -1,0 +1,5 @@
+2025-11-12 19:31:13.319 +07:00 [INF] Opened folder: C:\Users\UserOK\Documents\Python_Projects\Zapret-GUI\KG-Zapret\bin\Debug\net8.0-windows
+2025-11-12 19:48:09.367 +07:00 [INF] Testing connection
+2025-11-12 19:48:09.860 +07:00 [INF] Connection test results: youtube.com: ✓, discord.com: ✓, rutracker.org: ✓
+2025-11-12 19:49:08.430 +07:00 [INF] Testing connection
+2025-11-12 19:49:08.694 +07:00 [INF] Connection test results: youtube.com: ✓, discord.com: ✓, rutracker.org: ✓

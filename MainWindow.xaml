@@ -7,8 +7,8 @@
         xmlns:converters="clr-namespace:KG_Zapret.Converters"
         mc:Ignorable="d"
         Title="KG-Zapret" 
-        Height="730" 
-        Width="450"
+        Height="750" 
+        Width="480"
         MinHeight="730"
         MinWidth="450"
         WindowStartupLocation="CenterScreen"
@@ -61,36 +61,64 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Title -->
-        <TextBlock Grid.Row="0" 
-                   Text="KG-Zapret GUI" 
-                   FontSize="20" 
-                   FontWeight="Bold" 
-                   HorizontalAlignment="Center" 
-                   Margin="0,0,0,10"/>
+        <!-- Header with Image and Text -->
+        <Grid Grid.Row="0" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Image -->
+            <Image Grid.Column="0" 
+                x:Name="mainImage" 
+                Source="images/icon.png" 
+                Width="120" 
+                Height="120"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="0,0,15,0"/>
+
+            <!-- Text Content -->
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                <!-- Main Title -->
+                <TextBlock Text="KG-Zapret GUI" 
+                        FontSize="20" 
+                        FontWeight="Bold" 
+                        Margin="0,0,0,5"/>
+                
+                <!-- Description -->
+                <TextBlock Text="KG-Zapret GUI - ПО для ускорения интернета. Она полностью бесплатна и OpenSource. Данный проект копия проекта Zapret GUI (https://github.com/youtubediscord/zapret)"
+                        FontSize="11"
+                        TextWrapping="Wrap"
+                        Foreground="#666666"
+                        MaxWidth="300"/>
+            </StackPanel>
+        </Grid>
 
         <!-- Separator -->
         <Separator Grid.Row="1" Margin="0,0,0,10"/>
 
         <!-- Status -->
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,10">
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,0,0,10" HorizontalAlignment="Center">
             <TextBlock Text="Статус программы:" FontWeight="Bold" Margin="0,0,5,0"/>
             <TextBlock Text="{Binding ProcessStatus}"/>
         </StackPanel>
 
-        <!-- Current Strategy -->
-        <TextBlock Grid.Row="3" 
+        <!-- Current Strategy Label -->
+        <TextBlock Grid.Row="4" 
                    Text="Текущая стратегия:" 
                    FontWeight="Bold" 
                    FontSize="11" 
                    HorizontalAlignment="Center" 
                    Margin="0,0,0,5"/>
 
-        <TextBlock Grid.Row="4" 
+        <!-- Current Strategy Value -->
+        <TextBlock Grid.Row="5" 
                    Text="{Binding CurrentStrategy}" 
                    FontWeight="Bold" 
                    FontSize="12" 
@@ -100,8 +128,7 @@
                    Margin="0,0,0,10"/>
 
         <!-- Change Strategy Button -->
-        <Button Grid.Row="5" 
-                x:Name="SelectStrategyButton" 
+        <Button Grid.Row="6" 
                 Command="{Binding SelectStrategyCommand}"
                 Background="#0077FF"
                 Margin="0,0,0,10">
@@ -112,7 +139,7 @@
         </Button>
 
         <!-- Action Buttons Grid -->
-        <Grid Grid.Row="6" Margin="0,0,0,10">
+        <Grid Grid.Row="7" Margin="0,0,0,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -125,10 +152,9 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <!-- Start/Stop Button (switches between Start and Stop) -->
+            <!-- Start/Stop Button -->
             <Button Grid.Row="0" 
                     Grid.Column="0" 
-                    x:Name="StartStopButton"
                     Command="{Binding StartStopCommand}">
                 <Button.Style>
                     <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
@@ -161,10 +187,9 @@
                 </Button.Style>
             </Button>
 
-            <!-- Autostart Button (switches between Enable and Disable) -->
+            <!-- Autostart Button -->
             <Button Grid.Row="0" 
                     Grid.Column="1" 
-                    x:Name="AutostartButton"
                     Command="{Binding AutostartCommand}">
                 <Button.Style>
                     <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
@@ -230,7 +255,7 @@
                 </StackPanel>
             </Button>
 
-            <!-- Proxy Button (span 2 columns) -->
+            <!-- Proxy Button -->
             <Button Grid.Row="3" 
                     Grid.Column="0" 
                     Grid.ColumnSpan="2"
@@ -256,28 +281,26 @@
         </Grid>
 
         <!-- Theme Selector -->
-        <TextBlock Grid.Row="7" 
-                   Text="Тема оформления:" 
-                   HorizontalAlignment="Center" 
-                   Margin="0,10,0,5"/>
-
-        <ComboBox Grid.Row="7" 
-                  x:Name="ThemeComboBox" 
-                  SelectionChanged="ThemeComboBox_SelectionChanged" 
-                  Margin="0,25,0,10" 
-                  HorizontalAlignment="Stretch"/>
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,5">
+            <TextBlock Text="Тема оформления:" 
+                    VerticalAlignment="Center"
+                    Margin="0,0,10,0"/>
+            
+            <ComboBox x:Name="ThemeComboBox" 
+                    SelectionChanged="ThemeComboBox_SelectionChanged"
+                    Width="150"
+                    Height="30"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"/>
+        </StackPanel>
 
         <!-- Status Label -->
-        <TextBlock Grid.Row="8" 
-                   Text="{Binding StatusText}" 
-                   TextAlignment="Center" 
-                   FontSize="9" 
-                   Foreground="Gray" 
-                   VerticalAlignment="Bottom" 
-                   Margin="0,0,0,10"/>
-
-        <!-- Spacer -->
-        <TextBlock Grid.Row="9" Text="" Height="20"/>
+        <TextBlock Grid.Row="9" 
+                Text="{Binding StatusText}" 
+                TextAlignment="Center" 
+                FontSize="9" 
+                Foreground="Gray" 
+                VerticalAlignment="Bottom" 
+                Margin="0,10,0,10"/>
     </Grid>
 </Window>
-
