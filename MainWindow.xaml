@@ -7,10 +7,10 @@
         xmlns:converters="clr-namespace:KG_Zapret.Converters"
         mc:Ignorable="d"
         Title="KG-Zapret" 
-        Height="730" 
-        Width="450"
-        MinHeight="730"
-        MinWidth="450"
+        Height="750" 
+        Width="480"
+        MinHeight="52"
+        MinWidth="42"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
         Background="{DynamicResource MaterialDesignPaper}"
@@ -65,13 +65,39 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Title -->
-        <TextBlock Grid.Row="0" 
-                   Text="KG-Zapret GUI" 
-                   FontSize="20" 
-                   FontWeight="Bold" 
-                   HorizontalAlignment="Center" 
-                   Margin="0,0,0,10"/>
+        <!-- Header with Image and Text -->
+        <Grid Grid.Row="0" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Image -->
+            <Image Grid.Column="0" 
+                x:Name="mainImage" 
+                Source="images/icon.png" 
+                Width="80" 
+                Height="80"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="0,0,15,0"/>
+
+            <!-- Text Content -->
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                <!-- Main Title -->
+                <TextBlock Text="KG-Zapret GUI" 
+                        FontSize="20" 
+                        FontWeight="Bold" 
+                        Margin="0,0,0,5"/>
+                
+                <!-- Description -->
+                <TextBlock Text="KG-Zapret GUI - ПО для ускорения интернета. Она полностью бесплатна и OpenSource. Данный проект копия проекта Zapret GUI (https://github.com/youtubediscord/zapret)"
+                        FontSize="11"
+                        TextWrapping="Wrap"
+                        Foreground="#666666"
+                        MaxWidth="300"/>
+            </StackPanel>
+        </Grid>
 
         <!-- Separator -->
         <Separator Grid.Row="1" Margin="0,0,0,10"/>
